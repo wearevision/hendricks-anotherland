@@ -1407,3 +1407,102 @@ em {
     max-width: 100%;
   }
 }
+
+/* ===================================
+   PRINT / PDF STYLES
+   =================================== */
+@media print {
+  /* Force all reveal/fade animations to be visible */
+  .reveal,
+  .fade-in,
+  .reveal.revealed,
+  [class*="delay-"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Hide interactive/navigation elements */
+  .progress-nav,
+  .hero__scroll-indicator,
+  .hero__scroll-arrow,
+  .hero__vine {
+    display: none !important;
+  }
+
+  /* Compress full-screen hero for print */
+  .section--hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 60px 0 !important;
+  }
+
+  /* Divider sections */
+  .section--divider {
+    min-height: auto !important;
+    padding: 40px 0 !important;
+  }
+
+  /* Page breaks between major acts */
+  .section--brief,
+  .section--strategy,
+  .section--invitation,
+  .section--selection,
+  .section--venue,
+  .section--cast,
+  .section--act1,
+  .section--act2,
+  .section--sorbets,
+  .section--act3,
+  .section--unbox,
+  .section--farewell {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Avoid page breaks inside key content blocks */
+  .act__scene,
+  .brief__grid,
+  .cast__role,
+  .sorbets__item,
+  .unbox__grid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Ensure images render in print */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep dark background for premium look */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: #0a0a0a !important;
+    color: #f5f0e8 !important;
+  }
+
+  /* Constrain oversized scene images for print */
+  .act__scene-img img,
+  .act3__discover-img img {
+    max-height: 400px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .farewell__hero img {
+    max-height: 350px !important;
+  }
+
+  .venue__transformation-render img {
+    max-height: 450px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+}

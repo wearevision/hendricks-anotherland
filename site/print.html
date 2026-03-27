@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anotherland — Hendrick's Another Launch Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black:  #0a0a0a;
+      --black2: #141414;
+      --black3: #1c1c1c;
+      --gold:   #c8a96e;
+      --gold2:  #d4ba82;
+      --cream:  #f5f0e8;
+      --muted:  #9a9088;
+      --green:  #2d5a27;
+      --orange: #e8721d;
+      --W: 1920px;
+      --H: 1080px;
+      --f-title: 'Baskervville', Georgia, serif;
+      --f-body:  'Cormorant Garamond', Garamond, serif;
+      --f-ui:    'Inter', sans-serif;
+    }
+
+    html, body {
+      background: var(--black);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── SLIDE BASE ── */
+    .slide {
+      width: var(--W);
+      height: var(--H);
+      background: var(--black);
+      color: var(--cream);
+      font-family: var(--f-body);
+      overflow: hidden;
+      position: relative;
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+    }
+
+    /* Gold rule */
+    .rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 20px;
+    }
+    .rule--center { margin: 0 auto 20px; }
+
+    /* Label */
+    .label {
+      font-family: var(--f-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    /* Titles */
+    .h1 {
+      font-family: var(--f-title);
+      font-size: 96px;
+      font-weight: 400;
+      line-height: 1.0;
+      color: var(--cream);
+    }
+    .h1 em { color: var(--gold); font-style: italic; }
+
+    .h2 {
+      font-family: var(--f-title);
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--cream);
+    }
+    .h2 em { color: var(--gold); font-style: italic; }
+
+    .h3 {
+      font-family: var(--f-title);
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--gold);
+    }
+
+    .h4 {
+      font-family: var(--f-title);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--gold2);
+      margin-bottom: 10px;
+    }
+
+    p.lead {
+      font-family: var(--f-body);
+      font-size: 28px;
+      line-height: 1.55;
+      color: var(--cream);
+      font-weight: 300;
+    }
+
+    p.body {
+      font-family: var(--f-body);
+      font-size: 22px;
+      line-height: 1.6;
+      color: rgba(245, 240, 232, 0.8);
+    }
+
+    strong { color: var(--gold2); font-weight: 600; }
+    em { font-style: italic; }
+
+    img { display: block; object-fit: cover; }
+
+    /* Corner decoration */
+    .corner-tl, .corner-br {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      opacity: 0.25;
+    }
+    .corner-tl {
+      top: 40px; left: 48px;
+      border-top: 1px solid var(--gold);
+      border-left: 1px solid var(--gold);
+    }
+    .corner-br {
+      bottom: 40px; right: 48px;
+      border-bottom: 1px solid var(--gold);
+      border-right: 1px solid var(--gold);
+    }
+
+    /* Slide number */
+    .slide-num {
+      position: absolute;
+      bottom: 44px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--f-ui);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+    }
+
+    /* ══════════════════════════════════════════
+       SLIDE 1 — COVER
+    ══════════════════════════════════════════ */
+    .s1 {
+      background: var(--black);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .s1__h-logo {
+      width: 64px;
+      height: auto;
+      margin: 0 auto 36px;
+      filter: brightness(0) invert(0.8) sepia(1) saturate(3) hue-rotate(15deg);
+    }
+    .s1__pre {
+      font-family: var(--f-ui);
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .s1__title {
+      font-family: var(--f-title);
+      font-size: 110px;
+      font-weight: 400;
+      line-height: 1.0;
+      color: var(--cream);
+    }
+    .s1__title .accent {
+      display: block;
+      color: var(--gold);
+      font-style: italic;
+      font-size: 130px;
+    }
+    .s1__sub {
+      margin-top: 28px;
+      font-family: var(--f-body);
+      font-size: 26px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .s1__vines {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    .s1__vines img { height: 300px; width: auto; object-fit: contain; }
+
+    /* ══════════════════════════════════════════
+       SPLIT LAYOUT (text left, image right)
+    ══════════════════════════════════════════ */
+    .split {
+      display: flex;
+      width: 100%;
+    }
+    .split__text {
+      flex: 0 0 48%;
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .split__img {
+      flex: 0 0 52%;
+      position: relative;
+      overflow: hidden;
+    }
+    .split__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .split__img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(10,10,10,0.35) 0%, transparent 40%);
+    }
+
+    /* reversed */
+    .split--rev .split__text { order: 2; }
+    .split--rev .split__img { order: 1; }
+    .split--rev .split__img::after {
+      background: linear-gradient(to left, rgba(10,10,10,0.35) 0%, transparent 40%);
+    }
+
+    /* ══════════════════════════════════════════
+       FULL-BG SLIDES
+    ══════════════════════════════════════════ */
+    .fullbg {
+      position: relative;
+      width: 100%;
+    }
+    .fullbg__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .fullbg__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.5) 55%, rgba(10,10,10,0.25) 100%);
+    }
+    .fullbg__content {
+      position: relative;
+      z-index: 2;
+      padding: 80px 90px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ══════════════════════════════════════════
+       SLIDE 2 — THE BRIEF
+    ══════════════════════════════════════════ */
+    .s2__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 36px;
+    }
+    .s2__detail {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(200,169,110,0.12);
+    }
+    .s2__detail-label {
+      font-family: var(--f-ui);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      min-width: 90px;
+      padding-top: 4px;
+    }
+    .s2__detail-value {
+      font-family: var(--f-body);
+      font-size: 22px;
+      color: var(--cream);
+    }
+    .s2__bottle {
+      position: absolute;
+      right: 80px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 680px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 60px rgba(200,169,110,0.15));
+    }
+
+    /* ══════════════════════════════════════════
+       SLIDE 3 — STRATEGY
+    ══════════════════════════════════════════ */
+    .s3__phases {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 56px;
+    }
+    .s3__phase {
+      flex: 1;
+      padding: 40px 36px;
+      border: 1px solid rgba(200,169,110,0.15);
+      background: rgba(200,169,110,0.03);
+    }
+    .s3__phase--active {
+      border-color: rgba(200,169,110,0.4);
+      background: rgba(200,169,110,0.07);
+    }
+    .s3__num {
+      font-family: var(--f-ui);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .s3__name {
+      font-family: var(--f-title);
+      font-size: 36px;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+    .s3__desc {
+      font-family: var(--f-body);
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .s3__arrow {
+      font-size: 28px;
+      color: var(--gold);
+      padding: 0 16px;
+      flex-shrink: 0;
+    }
+    .s3__tagline {
+      margin-top: 64px;
+      font-family: var(--f-title);
+      font-size: 48px;
+      font-style: italic;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    /* ══════════════════════════════════════════
+       SLIDE 6 — VENUE GALLERY
+    ══════════════════════════════════════════ */
+    .s6__gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 4px;
+      flex: 1;
+    }
+    .s6__photo {
+      overflow: hidden;
+      position: relative;
+    }
+    .s6__photo:first-child {
+      grid-row: 1 / 3;
+    }
+    .s6__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ══════════════════════════════════════════
+       SLIDE 8 — CAST (Characters)
+    ══════════════════════════════════════════ */
+    .s8__chars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+      flex: 1;
+    }
+    .s8__char {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .s8__char img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .s8__char-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 16px 16px;
+      background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 100%);
+    }
+    .s8__char-count {
+      font-family: var(--f-ui);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .s8__char-name {
+      font-family: var(--f-title);
+      font-size: 24px;
+      color: var(--cream);
+    }
+
+    /* ══════════════════════════════════════════
+       SLIDE — SORBETS
+    ══════════════════════════════════════════ */
+    .sorbets__pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      flex: 1;
+    }
+    .sorbets__item {
+      position: relative;
+      overflow: hidden;
+    }
+    .sorbets__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .sorbets__item__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,10,10,0.55);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 48px;
+    }
+
+    /* ══════════════════════════════════════════
+       CREDITS SLIDE
+    ══════════════════════════════════════════ */
+    .s-credits {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .s-credits__logo {
+      height: 64px;
+      width: auto;
+      margin: 0 auto 40px;
+    }
+    .s-credits__divider {
+      width: 200px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.3;
+      margin: 32px auto;
+    }
+    .s-credits__agency {
+      font-family: var(--f-ui);
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .s-credits__agency strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+    .s-credits__contact {
+      margin-top: 14px;
+      font-family: var(--f-body);
+      font-size: 20px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ SLIDE 1 — COVER ══ -->
+<div class="slide s1">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <img src="images/brand/hendricks-h.svg" alt="H" class="s1__h-logo">
+  <p class="s1__pre">A proposal for</p>
+  <h1 class="s1__title">
+    Welcome to
+    <span class="accent">Anotherland</span>
+  </h1>
+  <p class="s1__sub">The Launch of Hendrick's Another — Santiago de Chile</p>
+  <div class="s1__vines">
+    <img src="images/brand/vine-left.png" alt="">
+    <img src="images/brand/vine-right.png" alt="">
+  </div>
+</div>
+
+<!-- ══ SLIDE 2 — THE BRIEF ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="split__text" style="flex:0 0 55%; padding: 80px 80px; position:relative; z-index:2;">
+    <div class="label">The Brief</div>
+    <div class="rule"></div>
+    <h2 class="h2">A New Chapter<br>in the Hendrick's Story</h2>
+    <p class="lead" style="margin-top:32px;">Hendrick's <strong>Another</strong> is a permanent new expression <strong>infused with orange blossom and cacao</strong>, with a perfect serve marrying <strong>tonic, cucumber, and orange</strong>.</p>
+    <p class="body" style="margin-top:20px;">An intimate, theatrical launch in Santiago de Chile — so extraordinary those who attend cannot help but share it, and those who don't will wish they had.</p>
+    <div class="s2__grid">
+      <div>
+        <div class="s2__detail"><span class="s2__detail-label">Date</span><span class="s2__detail-value">First week of June 2026</span></div>
+        <div class="s2__detail"><span class="s2__detail-label">Guests</span><span class="s2__detail-value">40 chosen souls</span></div>
+        <div class="s2__detail"><span class="s2__detail-label">Hours</span><span class="s2__detail-value">19:30 — 22:30</span></div>
+      </div>
+      <div>
+        <div class="s2__detail"><span class="s2__detail-label">Concept</span><span class="s2__detail-value">Anotherland / Find Your Other</span></div>
+        <div class="s2__detail"><span class="s2__detail-label">Goal</span><span class="s2__detail-value">Maximum content output</span></div>
+        <div class="s2__detail"><span class="s2__detail-label">Location</span><span class="s2__detail-value">Santiago de Chile</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="split__img" style="flex:0 0 45%; position:relative; overflow:hidden;">
+    <img src="images/brand/another-bottle.png" alt="Another" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); height:840px; width:auto; object-fit:contain; filter:drop-shadow(0 0 80px rgba(200,169,110,0.2));">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.6) 0%,transparent 50%);"></div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 3 — THE STRATEGY ══ -->
+<div class="slide" style="flex-direction:column; padding:80px 90px; justify-content:center;">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="label" style="text-align:center;">The Strategy</div>
+  <div class="rule rule--center"></div>
+  <h2 class="h2" style="text-align:center;">Experienced by Few. <em>Seen by Many.</em></h2>
+  <p class="lead" style="text-align:center; margin-top:20px; max-width:900px; margin-left:auto; margin-right:auto;">The brand's DNA is built on curiosity, the unusual, and the exclusive.<br>Anotherland is naturally a FOMO experience.</p>
+  <div class="s3__phases">
+    <div class="s3__phase">
+      <div class="s3__num">01</div>
+      <div class="s3__name">Pre-Show</div>
+      <div class="s3__desc">Mystery Noise<br>Unexpected Activation<br>100 Selected Influencers</div>
+    </div>
+    <div class="s3__arrow">→</div>
+    <div class="s3__phase s3__phase--active">
+      <div class="s3__num">02</div>
+      <div class="s3__name">Launch Event</div>
+      <div class="s3__desc">3-Act Experience<br>WOW Moment<br>40 Chosen Souls</div>
+    </div>
+    <div class="s3__arrow">→</div>
+    <div class="s3__phase">
+      <div class="s3__num">03</div>
+      <div class="s3__name">The Unbox</div>
+      <div class="s3__desc">Seeding Campaign<br>#hendrickschile<br>60+ Unboxings</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 4 — THE INVITATION (ON / KOLs) ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div style="flex:0 0 50%; position:relative; overflow:hidden;">
+    <img src="images/renders/pdf-invitation.jpg" alt="The Invitation" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(10,10,10,0.7) 100%);"></div>
+  </div>
+  <div style="flex:0 0 50%; padding:80px 70px; display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
+    <div class="label">Phase 1 — Noise / The Invitation</div>
+    <div class="rule"></div>
+    <h2 class="h2">The Invitation</h2>
+    <p class="body" style="margin-top:28px;">To manage properly the strategy we will divide in 3 phases, that will include ON/OFF media.</p>
+    <ul style="margin-top:28px; list-style:none; display:flex; flex-direction:column; gap:18px;">
+      <li style="display:flex; gap:16px; align-items:flex-start;">
+        <span style="color:var(--gold); font-size:18px; flex-shrink:0; margin-top:2px;">◆</span>
+        <p class="body"><strong>ON / KOL's:</strong> 100 selected influencers aligned to Hendrick's culture will receive a mysterious envelope — no brand, no name, only curiosity.</p>
+      </li>
+      <li style="display:flex; gap:16px; align-items:flex-start;">
+        <span style="color:var(--gold); font-size:18px; flex-shrink:0; margin-top:2px;">•</span>
+        <p class="body">The main idea is they shared this invitation with their followers to guess what's all about it.</p>
+      </li>
+      <li style="display:flex; gap:16px; align-items:flex-start;">
+        <span style="color:var(--gold); font-size:18px; flex-shrink:0; margin-top:2px;">•</span>
+        <p class="body">The invitation will have a Hendrick's mood text to scan a QR code and subscribe to discover if you are one of the chosen ones for Anotherland.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══ SLIDE 5 — THE INVITATION (OFF / Eye Character) ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div style="flex:0 0 48%; padding:80px 70px; display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
+    <div class="label">Phase 1 — Noise / The Invitation</div>
+    <div class="rule"></div>
+    <h2 class="h2">The Invitation</h2>
+    <ul style="margin-top:32px; list-style:none; display:flex; flex-direction:column; gap:24px;">
+      <li style="display:flex; gap:16px; align-items:flex-start;">
+        <span style="color:var(--gold); font-size:18px; flex-shrink:0; margin-top:2px;">•</span>
+        <p class="body"><strong>OFF / NTA:</strong> We will personify one of the characters of Hendrick's Gin and take him into the exclusive city spot delivering invitations to selected people. Creating noise between the people and taking some photos with them.</p>
+      </li>
+      <li style="display:flex; gap:16px; align-items:flex-start;">
+        <span style="color:var(--gold); font-size:18px; flex-shrink:0; margin-top:2px;">•</span>
+        <p class="body">Within Anotherland's 40 chosen souls, <strong>6 guests belong to the gloriously unexpected</strong> — regular curious minds, selected from the wider world, who stumble into the extraordinary. Their unfiltered wonder becomes Hendrick's most authentic voice, planting the seeds of a culture where anyone, remarkably, could be <em>Another</em>.</p>
+      </li>
+    </ul>
+  </div>
+  <div style="flex:0 0 52%; position:relative; overflow:hidden;">
+    <img src="images/renders/pdf-eye-street.jpg" alt="Eye Character delivering invitations" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.5) 0%,transparent 40%);"></div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 6 — THE PORTAL ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div style="flex:0 0 48%; padding:80px 70px; display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
+    <div class="label">Phase 1 — Digital</div>
+    <div class="rule"></div>
+    <h2 class="h2">The Portal</h2>
+    <p class="lead" style="margin-top:28px;">Scanning the code invitation will take you to a mobile landing page, where they will be invited to subscribe.</p>
+    <ul style="margin-top:28px; list-style:none; display:flex; flex-direction:column; gap:14px;">
+      <li style="display:flex; gap:12px; align-items:center;">
+        <span style="color:var(--gold); font-size:14px;">•</span>
+        <p class="body">Legal Age</p>
+      </li>
+      <li style="display:flex; gap:12px; align-items:center;">
+        <span style="color:var(--gold); font-size:14px;">•</span>
+        <p class="body">Personal Information</p>
+      </li>
+      <li style="display:flex; gap:12px; align-items:center;">
+        <span style="color:var(--gold); font-size:14px;">•</span>
+        <p class="body">Portal Link</p>
+      </li>
+    </ul>
+    <p class="body" style="margin-top:28px;">Post-subscription landing page activates a <strong>live countdown timer</strong>, personalized welcome message, and queue notification — sustaining anticipation until Anotherland's exclusive portal officially opens.</p>
+  </div>
+  <div style="flex:0 0 52%; position:relative; overflow:hidden;">
+    <img src="images/renders/pdf-phone-portal.jpg" alt="Anotherland Portal App" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.5) 0%,transparent 40%);"></div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 7 — THE SELECTION ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="split split--rev" style="width:100%;">
+    <div class="split__text" style="padding:80px 70px; flex:0 0 50%;">
+      <div class="label">Phase 2 — Release</div>
+      <div class="rule"></div>
+      <h2 class="h2">The Selection</h2>
+      <p class="lead" style="margin-top:28px;">48 hours before the event, <strong>34 KOLs and 6 unexpected people</strong> receive a second mysterious envelope.</p>
+      <p class="body" style="margin-top:24px;">Inside: a confirmed time, an address, and a <strong>key</strong> — the only artifact that grants passage through the portal into Anotherland.</p>
+      <p class="body" style="margin-top:16px; font-style:italic; color:var(--gold);">No key, no entry.</p>
+    </div>
+    <div class="split__img" style="flex:0 0 50%; position:relative; overflow:hidden;">
+      <img src="images/renders/pdf-silver-key.jpg" alt="The Key" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+      <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(10,10,10,0.4) 0%,transparent 60%);"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 6 — THE VENUE ══ -->
+<div class="slide" style="flex-direction:column;">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div style="padding:48px 80px 24px; flex-shrink:0;">
+    <div class="label">The Stage</div>
+    <div class="rule"></div>
+    <h2 class="h2">Taller 1 — <em>An Unusual & Historic Space</em></h2>
+  </div>
+  <div class="s6__gallery" style="flex:1; gap:4px;">
+    <div class="s6__photo" style="grid-row:1/3;">
+      <img src="images/renders/WhatsApp Image 2026-03-27 at 08.37.54.jpeg" alt="Venue Transformed" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="s6__photo">
+      <img src="images/venue/act3-main-hall.jpg" alt="Main Hall" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="s6__photo">
+      <img src="images/venue/exterior-entrance.jpg" alt="Entrance" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="s6__photo">
+      <img src="images/venue/alembic-detail.jpg" alt="Alembic" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="s6__photo">
+      <img src="images/venue/act1-alembic.jpg" alt="Act 1" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 7 — THE TRANSFORMATION ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="fullbg" style="display:flex; width:100%;">
+    <img class="fullbg__img" src="images/renders/WhatsApp Image 2026-03-27 at 08.37.54.jpeg" alt="Taller 1 Transformed">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.85) 0%,rgba(10,10,10,0.3) 60%,transparent 100%);"></div>
+    <div class="fullbg__content" style="max-width:680px; position:relative; z-index:2; padding:80px 90px;">
+      <div class="label">The Transformation</div>
+      <div class="rule"></div>
+      <h2 class="h2">Taller 1<br>Becomes <em>Anotherland</em></h2>
+      <p class="lead" style="margin-top:28px;">The venue's own classical white busts — relocated to the centre of the grand hall in a <strong>circular formation</strong> — become silent witnesses to the night.</p>
+      <p class="body" style="margin-top:20px;"><strong>Brand assets as scenography:</strong> Hendrick's carts as mobile bars, metallic tubs with fresh botanicals, the ornamental birdcage, Moon Light lamps, wooden crates, flower wall.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 8 — THE ANOTHERLANDERS ══ -->
+<div class="slide" style="flex-direction:column; padding:56px 80px 48px;">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="label">The Citizens</div>
+  <div class="rule"></div>
+  <h2 class="h2">The Anotherlanders</h2>
+  <div class="s8__chars">
+    <div class="s8__char">
+      <img src="images/renders/render-herbarium.jpg" alt="Herbarium">
+      <div class="s8__char-caption">
+        <div class="s8__char-count">× 1</div>
+        <div class="s8__char-name">Herbarium</div>
+      </div>
+    </div>
+    <div class="s8__char">
+      <img src="images/renders/render-storyteller.jpg" alt="Storyteller">
+      <div class="s8__char-caption">
+        <div class="s8__char-count">× 3</div>
+        <div class="s8__char-name">Storytellers</div>
+      </div>
+    </div>
+    <div class="s8__char">
+      <img src="images/renders/pdf-botanic-real.jpg" alt="Botanic" style="object-position:center top;">
+      <div class="s8__char-caption">
+        <div class="s8__char-count">× 4</div>
+        <div class="s8__char-name">Botanics</div>
+      </div>
+    </div>
+    <div class="s8__char">
+      <img src="images/renders/render-performer.jpg" alt="Performer">
+      <div class="s8__char-caption">
+        <div class="s8__char-count">× 2</div>
+        <div class="s8__char-name">Performers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 9 — ACT I: THE WELCOME ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="split" style="width:100%;">
+    <div class="split__text" style="flex:0 0 46%; padding:80px 64px;">
+      <div class="label">Act I</div>
+      <div class="rule"></div>
+      <h2 class="h2">The Welcome</h2>
+      <p class="lead" style="margin-top:28px;">In the entrance, the <strong>Herbarium</strong> stands before the door — silent, watchful.</p>
+      <p class="body" style="margin-top:20px;">Guests present their key. The door opens. The ordinary world is left behind.</p>
+      <p class="body" style="margin-top:20px;">Inside, the <strong>Storytellers</strong> welcome guests into Hendrick's Origins — gathering around the real copper alembic for the first act of the night.</p>
+      <p class="body" style="margin-top:20px; color:var(--gold); font-style:italic;">Welcome drink: Hendrick's Original with cucumber and rose.</p>
+    </div>
+    <div class="split__img" style="flex:0 0 54%;">
+      <img src="images/renders/render-alembic.jpg" alt="The Alembic">
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 10 — ACT II: THE CHOICES ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="fullbg" style="display:flex; width:100%;">
+    <img class="fullbg__img" src="images/renders/render-dark-hallway-simple.jpg" alt="Dark Hall">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.88) 0%,rgba(10,10,10,0.2) 100%);"></div>
+    <div class="fullbg__content" style="max-width:700px; position:relative; z-index:2;">
+      <div class="label">Act II</div>
+      <div class="rule"></div>
+      <h2 class="h2">The Choices</h2>
+      <p class="lead" style="margin-top:28px;">Guests move through a candlelit hall, guided by the <strong>Botanics</strong> through 4 story crossroads.</p>
+      <div style="margin-top:36px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div style="padding:20px; border:1px solid rgba(200,169,110,0.15); border-radius:2px;">
+          <div style="font-family:var(--f-ui);font-size:11px;letter-spacing:0.2em;color:var(--gold);margin-bottom:8px;">ORIGIN</div>
+          <div style="font-family:var(--f-title);font-size:22px;color:var(--cream);">Botanical or Distilled?</div>
+        </div>
+        <div style="padding:20px; border:1px solid rgba(200,169,110,0.15); border-radius:2px;">
+          <div style="font-family:var(--f-ui);font-size:11px;letter-spacing:0.2em;color:var(--gold);margin-bottom:8px;">SPIRIT</div>
+          <div style="font-family:var(--f-title);font-size:22px;color:var(--cream);">Water or Earth?</div>
+        </div>
+        <div style="padding:20px; border:1px solid rgba(200,169,110,0.15); border-radius:2px;">
+          <div style="font-family:var(--f-ui);font-size:11px;letter-spacing:0.2em;color:var(--gold);margin-bottom:8px;">SENSE</div>
+          <div style="font-family:var(--f-title);font-size:22px;color:var(--cream);">Curious or Daring?</div>
+        </div>
+        <div style="padding:20px; border:1px solid rgba(200,169,110,0.15); border-radius:2px;">
+          <div style="font-family:var(--f-ui);font-size:11px;letter-spacing:0.2em;color:var(--gold);margin-bottom:8px;">TIME</div>
+          <div style="font-family:var(--f-title);font-size:22px;color:var(--cream);">Ancient or New?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 11 — THE BOTANICAL SORBETS ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="split" style="width:100%;">
+    <div class="split__text" style="flex:0 0 44%; padding:80px 64px;">
+      <div class="label">A Palate Interlude</div>
+      <div class="rule"></div>
+      <h2 class="h2">The Botanical<br><em>Sorbets</em></h2>
+      <p class="lead" style="margin-top:28px;">Between the choices and the revelation — two artisanal sorbets that bridge both worlds.</p>
+      <div style="margin-top:36px;">
+        <div style="padding:24px 0; border-bottom:1px solid rgba(200,169,110,0.12);">
+          <div class="h4">The Origins Sorbet</div>
+          <p class="body"><strong>Cucumber & Bulgarian Rose</strong> — inspired by the Original's perfect serve. Cool, green, herbal. Delicate and fresh.</p>
+        </div>
+        <div style="padding:24px 0;">
+          <div class="h4" style="color:var(--orange);">The Another Sorbet</div>
+          <p class="body"><strong>Orange Blossom & Cacao</strong> — inspired by Another's signature infusion. Warm, amber, dark chocolate depth. Unmistakably <em>Another</em>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="split__img" style="flex:0 0 56%;">
+      <img src="images/renders/render-sorbets.jpg" alt="The Botanical Sorbets" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 12 — ACT III: THE WOW MOMENT ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="fullbg" style="display:flex; width:100%;">
+    <img class="fullbg__img" src="images/renders/WhatsApp Image 2026-03-27 at 12.05.15.jpeg" alt="WOW Moment">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,rgba(10,10,10,0.15) 60%);"></div>
+    <div class="fullbg__content" style="justify-content:flex-end; position:relative; z-index:2; padding:60px 90px;">
+      <div class="label">Act III</div>
+      <div class="rule"></div>
+      <h2 class="h2">The WOW Moment</h2>
+      <p class="lead" style="margin-top:20px; max-width:800px;">The figure rises. An invitation. <strong>All the lights turn on</strong> — and Anotherland is revealed in its full, breathtaking glory.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 13 — THE TOAST ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="split split--rev" style="width:100%;">
+    <div class="split__text" style="flex:0 0 50%; padding:80px 64px;">
+      <div class="label">Act III — The Toast</div>
+      <div class="rule"></div>
+      <h2 class="h2">The Discovery</h2>
+      <p class="lead" style="margin-top:28px;">The Orator reveals the wooden box — it opens to unveil <strong>Hendrick's Another</strong>, a gin uniquely infused with <strong>orange blossom and cacao</strong>.</p>
+      <p class="body" style="margin-top:20px;">Some lights shift to orange. The cocktail built through the story is served — and the toast is raised.</p>
+      <blockquote style="margin-top:32px; padding-left:24px; border-left:2px solid var(--gold); font-family:var(--f-title); font-style:italic; font-size:30px; color:var(--gold); line-height:1.4;">
+        "To Another,<br>may we savor it always."
+      </blockquote>
+    </div>
+    <div class="split__img" style="flex:0 0 50%;">
+      <img src="images/renders/render-cocktail-bar.jpg" alt="The Anotherland Bar" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 14 — THE UNBOX ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="split" style="width:100%;">
+    <div class="split__text" style="flex:0 0 46%; padding:80px 64px;">
+      <div class="label">Phase 3 — Amplification</div>
+      <div class="rule"></div>
+      <h2 class="h2">The Unbox</h2>
+      <p class="lead" style="margin-top:28px;">Experienced by few. <em>Seen by many.</em></p>
+      <p class="body" style="margin-top:24px;">The 60+ curious souls who received the mysterious invitation but were not among the chosen 40 find a <strong>seeding box</strong> at their door within days of the event.</p>
+      <p class="body" style="margin-top:20px;">They unbox it on camera. They share it with their followers. The hashtag <strong>#hendrickschile</strong> spreads. The legend of Anotherland grows.</p>
+    </div>
+    <div class="split__img" style="flex:0 0 54%;">
+      <img src="images/renders/seeding-box-another.jpg" alt="Seeding Box" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 15 — THE FAREWELL ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="fullbg" style="display:flex; width:100%;">
+    <img class="fullbg__img" src="images/renders/render-farewell-cocktails-white.jpg" alt="Farewell">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.85) 0%,rgba(10,10,10,0.2) 70%);"></div>
+    <div class="fullbg__content" style="max-width:680px; position:relative; z-index:2;">
+      <div class="label">The Farewell</div>
+      <div class="rule"></div>
+      <h2 class="h2">A Keepsake<br><em>From Anotherland</em></h2>
+      <p class="lead" style="margin-top:28px;">The traveler rises, carrying their glass and their journey through Anotherland forward.</p>
+      <p class="body" style="margin-top:20px;">The Purveyor offers a bespoke keepsake token as guests exit back into the ordinary world — <em>forever changed</em>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 16 — CREDITS ══ -->
+<div class="slide s-credits">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <img src="images/brand/hendricks-logo.png" alt="Hendrick's" class="s-credits__logo">
+  <h2 class="h2" style="text-align:center;">Anotherland Awaits</h2>
+  <p style="font-family:var(--f-body); font-size:24px; color:var(--muted); margin-top:12px;">Santiago de Chile — June 2026</p>
+  <div class="s-credits__divider"></div>
+  <p class="s-credits__agency">A proposal by <strong>WeAreVision</strong></p>
+  <p class="s-credits__contact">Federico Elgueta — Federico@wearevision.cl</p>
+</div>
+
+</body>
+</html>
