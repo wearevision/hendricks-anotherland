@@ -24,7 +24,7 @@
   --orange: #e8721d;
   --orange-glow: rgba(232, 114, 29, 0.15);
 
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Baskervville', Georgia, serif;
   --font-body: 'Cormorant Garamond', Garamond, serif;
   --font-ui: 'Inter', -apple-system, sans-serif;
 
@@ -188,8 +188,8 @@ em {
 .hero__h-mark {
   width: 48px;
   height: auto;
-  opacity: 0.7;
-  filter: brightness(2) sepia(0.3);
+  opacity: 0.9;
+  filter: brightness(0) invert(0.8) sepia(1) saturate(3) hue-rotate(15deg);
   margin: 0 auto;
 }
 
@@ -751,6 +751,80 @@ em {
   width: 100%;
   border-radius: 4px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- SORBETS --- */
+.section--sorbets {
+  background: linear-gradient(to bottom, var(--black-deep), rgba(232, 114, 29, 0.03), var(--black-deep));
+  border-top: 1px solid rgba(200, 169, 110, 0.08);
+}
+
+.sorbets__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.sorbets__item {
+  padding: 32px;
+  border: 1px solid rgba(200, 169, 110, 0.12);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.sorbets__item--another {
+  border-color: rgba(232, 114, 29, 0.2);
+}
+
+.sorbets__icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.sorbets__name {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 24px);
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.sorbets__item--another .sorbets__name {
+  color: var(--orange);
+}
+
+.sorbets__desc {
+  color: var(--cream-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.sorbets__visual {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.sorbets__visual img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 12px 48px rgba(200, 169, 110, 0.1);
+}
+
+.sorbets__caption {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .sorbets__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .farewell__hero {
