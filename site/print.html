@@ -24,6 +24,10 @@
       --f-title: 'Baskervville', Georgia, serif;
       --f-body:  'Cormorant Garamond', Garamond, serif;
       --f-ui:    'Inter', sans-serif;
+      /* 16:9 safe-area spacing tokens */
+      --pad-y:    96px;   /* vertical padding for slide content */
+      --pad-x:    96px;   /* horizontal padding for split text panels */
+      --pad-x-lg: 120px;  /* horizontal for fullbg / centered / wide layouts */
     }
 
     html, body {
@@ -216,7 +220,7 @@
     }
     .split__text {
       flex: 0 0 48%;
-      padding: 80px 64px;
+      padding: var(--pad-y) var(--pad-x);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -267,7 +271,7 @@
     .fullbg__content {
       position: relative;
       z-index: 2;
-      padding: 80px 90px;
+      padding: var(--pad-y) var(--pad-x-lg);
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -292,7 +296,7 @@
     }
     .s2__detail-label {
       font-family: var(--f-ui);
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
@@ -301,7 +305,7 @@
     }
     .s2__detail-value {
       font-family: var(--f-body);
-      font-size: 22px;
+      font-size: 25px;
       color: var(--cream);
     }
     .s2__bottle {
@@ -603,12 +607,12 @@
 <div class="slide">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
-  <div class="split__text" style="flex:0 0 55%; padding: 80px 80px; position:relative; z-index:2;">
+  <div class="split__text" style="flex:0 0 55%; position:relative; z-index:2;">
     <div class="label">The Brief</div>
     <div class="rule"></div>
     <h2 class="h2">A New Chapter<br>in the Hendrick's Story</h2>
-    <p class="lead" style="margin-top:32px;">Hendrick's <strong>Another</strong> is a permanent new expression <strong>infused with orange blossom and cacao</strong>, with a perfect serve marrying <strong>tonic, cucumber, and orange</strong>.</p>
-    <p class="body" style="margin-top:20px;">An intimate, theatrical launch in Santiago de Chile — so extraordinary those who attend cannot help but share it, and those who don't will wish they had.</p>
+    <p class="lead" style="margin-top:32px; font-size:31px;">Hendrick's <strong>Another</strong> is a permanent new expression <strong>infused with orange blossom and cacao</strong>, with a perfect serve marrying <strong>tonic, cucumber, and orange</strong>.</p>
+    <p class="body" style="margin-top:20px; font-size:25px;">An intimate, theatrical launch in Santiago de Chile — so extraordinary those who attend cannot help but share it, and those who don't will wish they had.</p>
     <div class="s2__grid">
       <div>
         <div class="s2__detail"><span class="s2__detail-label">Date</span><span class="s2__detail-value">First week of June 2026</span></div>
@@ -629,7 +633,7 @@
 </div>
 
 <!-- ══ SLIDE 3 — THE STRATEGY ══ -->
-<div class="slide" style="flex-direction:column; padding:80px 90px; justify-content:center;">
+<div class="slide" style="flex-direction:column; padding: var(--pad-y) var(--pad-x-lg); justify-content:center;">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="label" style="text-align:center;">The Strategy</div>
@@ -665,7 +669,7 @@
     <img src="images/renders/pdf-invitation.jpg" alt="The Invitation" style="width:100%; height:100%; object-fit:cover; object-position:center;">
     <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(10,10,10,0.7) 100%);"></div>
   </div>
-  <div style="flex:0 0 50%; padding:80px 70px; display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
+  <div style="flex:0 0 50%; padding: var(--pad-y) var(--pad-x); display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
     <div class="label">Phase 1 — Noise / The Invitation</div>
     <div class="rule"></div>
     <h2 class="h2">The Invitation</h2>
@@ -691,7 +695,7 @@
 <div class="slide">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
-  <div style="flex:0 0 48%; padding:80px 70px; display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
+  <div style="flex:0 0 48%; padding: var(--pad-y) var(--pad-x); display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
     <div class="label">Phase 1 — Noise / The Invitation</div>
     <div class="rule"></div>
     <h2 class="h2">The Invitation</h2>
@@ -716,7 +720,7 @@
 <div class="slide">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
-  <div style="flex:0 0 48%; padding:80px 70px; display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
+  <div style="flex:0 0 48%; padding: var(--pad-y) var(--pad-x); display:flex; flex-direction:column; justify-content:center; background:var(--black2);">
     <div class="label">Phase 1 — Digital</div>
     <div class="rule"></div>
     <h2 class="h2">The Portal</h2>
@@ -748,7 +752,7 @@
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="split split--rev" style="width:100%;">
-    <div class="split__text" style="padding:80px 70px; flex:0 0 50%;">
+    <div class="split__text" style="flex:0 0 50%;">
       <div class="label">Phase 2 — Release</div>
       <div class="rule"></div>
       <h2 class="h2">The Selection</h2>
@@ -767,7 +771,7 @@
 <div class="slide" style="flex-direction:column;">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
-  <div style="padding:48px 80px 24px; flex-shrink:0;">
+  <div style="padding: var(--pad-y) var(--pad-x-lg) 48px; flex-shrink:0;">
     <div class="label">The Stage</div>
     <div class="rule"></div>
     <h2 class="h2">Taller 1 — <em>An Unusual & Historic Space</em></h2>
@@ -798,7 +802,7 @@
   <div class="fullbg" style="display:flex; width:100%;">
     <img class="fullbg__img" src="images/renders/WhatsApp Image 2026-03-27 at 08.37.54.jpeg" alt="Taller 1 Transformed">
     <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.85) 0%,rgba(10,10,10,0.3) 60%,transparent 100%);"></div>
-    <div class="fullbg__content" style="max-width:680px; position:relative; z-index:2; padding:80px 90px;">
+    <div class="fullbg__content" style="max-width:680px; position:relative; z-index:2;">
       <div class="label">The Transformation</div>
       <div class="rule"></div>
       <h2 class="h2">Taller 1<br>Becomes <em>Anotherland</em></h2>
@@ -809,7 +813,7 @@
 </div>
 
 <!-- ══ SLIDE 8 — THE ANOTHERLANDERS ══ -->
-<div class="slide" style="flex-direction:column; padding:56px 80px 48px;">
+<div class="slide" style="flex-direction:column; padding: var(--pad-y) var(--pad-x-lg);">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="label">The Citizens</div>
@@ -848,7 +852,7 @@
 </div>
 
 <!-- ══ SLIDE 9 — THE JOURNEY (Agenda / Timing) ══ -->
-<div class="slide" style="flex-direction:column; padding:64px 96px 72px;">
+<div class="slide" style="flex-direction:column; padding: var(--pad-y) var(--pad-x-lg);">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="label">The Agenda</div>
@@ -891,7 +895,7 @@
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="split" style="width:100%;">
-    <div class="split__text" style="flex:0 0 55%; padding:72px 80px;">
+    <div class="split__text" style="flex:0 0 55%;">
       <div class="label">The Catering</div>
       <div class="rule"></div>
       <h2 class="h2">Another <em>Selection</em></h2>
@@ -940,7 +944,7 @@
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="split" style="width:100%;">
-    <div class="split__text" style="flex:0 0 46%; padding:80px 64px;">
+    <div class="split__text" style="flex:0 0 46%;">
       <div class="label">Act I</div>
       <div class="rule"></div>
       <h2 class="h2">The Welcome</h2>
@@ -994,7 +998,7 @@
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="split" style="width:100%;">
-    <div class="split__text" style="flex:0 0 44%; padding:80px 64px;">
+    <div class="split__text" style="flex:0 0 44%;">
       <div class="label">A Palate Interlude</div>
       <div class="rule"></div>
       <h2 class="h2">The Botanical<br><em>Sorbets</em></h2>
@@ -1023,7 +1027,7 @@
   <div class="fullbg" style="display:flex; width:100%;">
     <img class="fullbg__img" src="images/renders/WhatsApp Image 2026-03-27 at 12.05.15.jpeg" alt="WOW Moment">
     <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,rgba(10,10,10,0.15) 60%);"></div>
-    <div class="fullbg__content" style="justify-content:flex-end; position:relative; z-index:2; padding:60px 90px;">
+    <div class="fullbg__content" style="justify-content:flex-end; position:relative; z-index:2;">
       <div class="label">Act III</div>
       <div class="rule"></div>
       <h2 class="h2">The WOW Moment</h2>
@@ -1037,7 +1041,7 @@
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="split split--rev" style="width:100%;">
-    <div class="split__text" style="flex:0 0 50%; padding:80px 64px;">
+    <div class="split__text" style="flex:0 0 50%;">
       <div class="label">Act III — The Toast</div>
       <div class="rule"></div>
       <h2 class="h2">The Discovery</h2>
@@ -1058,7 +1062,7 @@
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
   <div class="split" style="width:100%;">
-    <div class="split__text" style="flex:0 0 46%; padding:80px 64px;">
+    <div class="split__text" style="flex:0 0 46%;">
       <div class="label">Phase 3 — Amplification</div>
       <div class="rule"></div>
       <h2 class="h2">The Unbox</h2>
