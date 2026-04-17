@@ -477,40 +477,89 @@
     }
     .journey__row {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 32px;
-      padding: 11px 0;
-      border-top: 1px solid rgba(200, 169, 110, 0.15);
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      padding: 22px 0;
+      border-top: 1px solid rgba(200, 169, 110, 0.18);
       align-items: baseline;
+      position: relative;
+      z-index: 2;
     }
     .journey__row:last-child {
-      border-bottom: 1px solid rgba(200, 169, 110, 0.15);
+      border-bottom: 1px solid rgba(200, 169, 110, 0.18);
     }
     .journey__time {
       font-family: var(--f-ui);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       color: var(--gold);
       text-transform: uppercase;
     }
     .journey__desc {
       font-family: var(--f-body);
-      font-size: 16px;
-      line-height: 1.4;
-      color: rgba(245, 240, 232, 0.88);
+      font-size: 19px;
+      line-height: 1.45;
+      color: rgba(245, 240, 232, 0.9);
     }
     .journey__desc em {
       color: var(--cream);
       font-style: italic;
       font-family: var(--f-title);
-      font-size: 18px;
+      font-size: 22px;
       display: block;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
     .journey__desc strong {
       color: var(--gold2);
       font-weight: 500;
+    }
+    /* Decorative botanicals for Journey slides */
+    .journey__vine-tl,
+    .journey__vine-br,
+    .journey__hand-tr,
+    .journey__hand-bl {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .journey__vine-tl {
+      top: -40px;
+      left: -40px;
+      width: 380px;
+      opacity: 0.28;
+      transform: rotate(-8deg);
+    }
+    .journey__vine-br {
+      bottom: -60px;
+      right: -40px;
+      width: 420px;
+      opacity: 0.24;
+      transform: rotate(180deg) rotate(-10deg);
+    }
+    .journey__hand-tr {
+      top: 60px;
+      right: 80px;
+      width: 180px;
+      opacity: 0.55;
+      transform: scaleX(-1) rotate(-15deg);
+      filter: sepia(0.4) hue-rotate(-10deg) brightness(0.85);
+    }
+    .journey__hand-bl {
+      bottom: 40px;
+      left: 60px;
+      width: 180px;
+      opacity: 0.55;
+      transform: rotate(15deg);
+      filter: sepia(0.4) hue-rotate(-10deg) brightness(0.85);
+    }
+    .journey__part {
+      font-family: var(--f-ui);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 8px;
     }
 
     /* ══════════════════════════════════════════
@@ -851,13 +900,16 @@
   </div>
 </div>
 
-<!-- ══ SLIDE 9 — THE JOURNEY (Agenda / Timing) ══ -->
-<div class="slide" style="flex-direction:column; padding: var(--pad-y) var(--pad-x-lg);">
+<!-- ══ SLIDE 9A — THE JOURNEY · PART I (Before The Portal) ══ -->
+<div class="slide" style="flex-direction:column; padding: var(--pad-y) var(--pad-x-lg); overflow:hidden;">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
-  <div class="label">The Agenda</div>
+  <img class="journey__vine-tl" src="images/brand/vine-left.png" alt="">
+  <img class="journey__hand-bl" src="images/brand/hand-blossom-left.png" alt="">
+  <div class="label">The Agenda · Part I</div>
   <div class="rule"></div>
   <h2 class="h2">The Journey</h2>
+  <div class="journey__part">Before The Portal</div>
   <div class="journey__table">
     <div class="journey__row">
       <div class="journey__time">19:30</div>
@@ -875,6 +927,20 @@
       <div class="journey__time">20:50 – 21:00</div>
       <div class="journey__desc"><em>Hendrick's Character Invitation</em>Guests will be introduced to the Eye Character, who will deliver a captivating performance alongside the Operator, before they are invited to cross 'The Portal' and step into the world of Anotherland.</div>
     </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 9B — THE JOURNEY · PART II (Into Anotherland) ══ -->
+<div class="slide" style="flex-direction:column; padding: var(--pad-y) var(--pad-x-lg); overflow:hidden;">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <img class="journey__vine-br" src="images/brand/vine-right.png" alt="">
+  <img class="journey__hand-tr" src="images/brand/hand-blossom-right.png" alt="">
+  <div class="label">The Agenda · Part II</div>
+  <div class="rule"></div>
+  <h2 class="h2">Into <em>Anotherland</em></h2>
+  <div class="journey__part">Crossing The Portal</div>
+  <div class="journey__table">
     <div class="journey__row">
       <div class="journey__time">21:01 – 21:15</div>
       <div class="journey__desc"><em>Anotherland / ACT III</em>Guests will be left in awe as they step into this extraordinary new world, using their chosen artifact to unlock a one-of-a-kind experience. Once everyone has received their drink, the Operator will introduce a mysterious new character, who will take center stage to lead a breathtaking and unforgettable unveiling of Another Hendrick's. <strong>*1 Drink with Artifact + Another Hendrick's Perfect Serving. **Anotherland Music.</strong></div>
