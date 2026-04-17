@@ -462,6 +462,85 @@
     }
 
     /* ══════════════════════════════════════════
+       SLIDE — THE JOURNEY (Agenda / Timing)
+    ══════════════════════════════════════════ */
+    .journey__table {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0;
+    }
+    .journey__row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(200, 169, 110, 0.15);
+      align-items: baseline;
+    }
+    .journey__row:last-child {
+      border-bottom: 1px solid rgba(200, 169, 110, 0.15);
+    }
+    .journey__time {
+      font-family: var(--f-ui);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .journey__desc {
+      font-family: var(--f-body);
+      font-size: 20px;
+      line-height: 1.5;
+      color: rgba(245, 240, 232, 0.88);
+    }
+    .journey__desc em {
+      color: var(--cream);
+      font-style: italic;
+      font-family: var(--f-title);
+      font-size: 22px;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .journey__desc strong {
+      color: var(--gold2);
+      font-weight: 500;
+    }
+
+    /* ══════════════════════════════════════════
+       SLIDE — ANOTHER SELECTION (Catering)
+    ══════════════════════════════════════════ */
+    .selection__quantities {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid rgba(200, 169, 110, 0.2);
+    }
+    .selection__qty-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(200, 169, 110, 0.12);
+      align-items: baseline;
+    }
+    .selection__qty-num {
+      font-family: var(--f-title);
+      font-size: 28px;
+      color: var(--gold);
+      text-align: right;
+    }
+    .selection__qty-label {
+      font-family: var(--f-ui);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    /* ══════════════════════════════════════════
        CREDITS SLIDE
     ══════════════════════════════════════════ */
     .s-credits {
@@ -768,7 +847,95 @@
   </div>
 </div>
 
-<!-- ══ SLIDE 9 — ACT I: THE WELCOME ══ -->
+<!-- ══ SLIDE 9 — THE JOURNEY (Agenda / Timing) ══ -->
+<div class="slide" style="flex-direction:column; padding:64px 96px 72px;">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="label">The Agenda</div>
+  <div class="rule"></div>
+  <h2 class="h2">The Journey</h2>
+  <div class="journey__table">
+    <div class="journey__row">
+      <div class="journey__time">19:30</div>
+      <div class="journey__desc"><em>Guests Arrival</em>Anotherland key request.</div>
+    </div>
+    <div class="journey__row">
+      <div class="journey__time">19:31 – 20:30</div>
+      <div class="journey__desc"><em>Hendrick's Reception / ACT I</em>Welcome with our heritage, Hendrick's Celebration, The Operator introduces the journey. <strong>1 Drink / Hendrick's Original.</strong> Lounge Party.</div>
+    </div>
+    <div class="journey__row">
+      <div class="journey__time">20:31 – 20:50</div>
+      <div class="journey__desc"><em>The Artifacts / ACT II</em>The Operator introduces The Botanics — four storytellers. Guests choose one artifact that resonates.</div>
+    </div>
+    <div class="journey__row">
+      <div class="journey__time">20:50 – 21:00</div>
+      <div class="journey__desc"><em>Hendrick's Character Invitation</em>The Eye Character joins The Operator. Guests cross <strong>The Portal</strong>.</div>
+    </div>
+    <div class="journey__row">
+      <div class="journey__time">21:01 – 21:15</div>
+      <div class="journey__desc"><em>Anotherland / ACT III</em>Guests unlock their drink with the chosen artifact. A mysterious new character leads the unveiling of Another Hendrick's. <strong>1 Drink + Another Hendrick's Perfect Serving.</strong> Anotherland Music.</div>
+    </div>
+    <div class="journey__row">
+      <div class="journey__time">21:18 – 21:20</div>
+      <div class="journey__desc"><em>Cheers Moment</em>The Operator gathers everyone for a celebratory toast — captured as a lasting photo memento.</div>
+    </div>
+    <div class="journey__row">
+      <div class="journey__time">21:22 – 23:00</div>
+      <div class="journey__desc"><em>Anotherland Open</em>Free enjoyment. The Portal closes at 23:00.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 10 — ANOTHER SELECTION (Catering) ══ -->
+<div class="slide">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="split" style="width:100%;">
+    <div class="split__text" style="flex:0 0 55%; padding:72px 80px;">
+      <div class="label">The Catering</div>
+      <div class="rule"></div>
+      <h2 class="h2">Another <em>Selection</em></h2>
+      <p class="body" style="margin-top:28px;">As this is a truly one-of-a-kind event, we are committed to curating an equally unique culinary experience that elevates and enriches the world of Anotherland.</p>
+      <p class="body" style="margin-top:16px;">Every dish and bite is thoughtfully crafted to complement the drinks and the immersive journey.</p>
+      <p class="body" style="margin-top:16px;">Our proposal unfolds across two chapters — <strong>ACT I & ACT III</strong> — featuring a <strong>Gin Flavour Sorbet</strong> as a signature presentation for Anotherland.</p>
+      <div class="selection__quantities">
+        <div class="selection__qty-row">
+          <div class="selection__qty-num">100</div>
+          <div class="selection__qty-label">Appetizer</div>
+        </div>
+        <div class="selection__qty-row">
+          <div class="selection__qty-num">100</div>
+          <div class="selection__qty-label">Mocktails</div>
+        </div>
+        <div class="selection__qty-row">
+          <div class="selection__qty-num">300</div>
+          <div class="selection__qty-label">Water, Juice, Other</div>
+        </div>
+        <div class="selection__qty-row">
+          <div class="selection__qty-num">300</div>
+          <div class="selection__qty-label">Cold Finger Food</div>
+        </div>
+        <div class="selection__qty-row">
+          <div class="selection__qty-num">300</div>
+          <div class="selection__qty-label">Hot Finger Food</div>
+        </div>
+        <div class="selection__qty-row">
+          <div class="selection__qty-num">50</div>
+          <div class="selection__qty-label">Mini Dishes</div>
+        </div>
+        <div class="selection__qty-row">
+          <div class="selection__qty-num">100</div>
+          <div class="selection__qty-label">Mini Desserts</div>
+        </div>
+      </div>
+    </div>
+    <div class="split__img" style="flex:0 0 45%;">
+      <img src="images/renders/render-sorbets.jpg" alt="Gin Flavour Sorbet">
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 11 — ACT I: THE WELCOME ══ -->
 <div class="slide">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
