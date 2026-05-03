@@ -1,0 +1,1 @@
+{let t=document.currentScript.src;t.startsWith("//")&&(t="https:"+t);let e="",l="local.sleeknote.com";window.location.href.includes(l)||t.includes(l)||(e=(t.split("/").pop().split(".")[0].split("-")[1]||"production")+"/");let o=t.substr(0,t.lastIndexOf("/")+1).replace(/([^:]\/)\/+/g,"$1");import(o+e+"core-module.js").then(({boot:t})=>t())}
